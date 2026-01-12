@@ -1,20 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CoursController!{% endblock %}
+{% block title %}Nos Cours - Kids Learning{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section class="courses-section">
+    <div class="container">
+        <h2 class="section-title">Nos Cours</h2>
+        <p class="section-subtitle">Apprenez à votre rythme avec nos cours en ligne</p>
+        
+        <div class="courses-grid">
+            <!-- Course 1: Mathématiques -->
+            <div class="course-card">
+                <img src="{{ asset('images/maths.jpeg') }}" alt="Mathématiques" class="course-image">
+                <h3 class="course-title">Mathématiques</h3>
+                <p class="course-description">Explorez les concepts fondamentaux et avancés des mathématiques et devenez un maître des nombres.</p>
+                <a href="#" class="btn-course">Démarrer l'Apprentissage</a>
+            </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <!-- Course 2: Sciences -->
+            <div class="course-card">
+                <img src="{{ asset('images/science.jpeg') }}" alt="Sciences" class="course-image">
+                <h3 class="course-title">Sciences</h3>
+                <p class="course-description">Découvrez les mystères de l'univers, de la biologie moléculaire à la physique quantique.</p>
+                <a href="#" class="btn-course">Démarrer l'Apprentissage</a>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/aaza/KidsLearning/src/Controller/CoursController.php</code></li>
-        <li>Your template at <code>C:/Users/aaza/KidsLearning/templates/cours/index.html.twig</code></li>
-    </ul>
-</div>
+            <!-- Course 3: Littérature -->
+            <div class="course-card">
+                <img src="{{ asset('images/literature.jpeg') }}" alt="Littérature" class="course-image">
+                <h3 class="course-title">Littérature</h3>
+                <p class="course-description">Parcourez les œuvres des plus grands auteurs, poètes, et dramaturges de l'histoire.</p>
+                <a href="#" class="btn-course">Démarrer l'Apprentissage</a>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
