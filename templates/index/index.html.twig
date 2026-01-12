@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur Kids Learning{% endblock %}
+
+{% block body %}
+
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Bienvenue sur Kids</h1>
+        <h2 class="hero-subtitle">Learning</h2>
+        <a href="#" class="btn-primary">Découvrir</a>
+    </div>
+</section>
+
+<p class="hero-date">Aujourd'hui on est le 06/01/2025</p>
+
+
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title">Témoignages</h2>
+        <p class="section-subtitle">Découvrez ce que les gens disent de notre plateforme</p>
+        
+        <div class="testimonials-grid">
+            
+            <div class="testimonial-card">
+                <img src="{{ asset('images/parent-1.jpeg') }}" alt="Thérèse Dupont" class="testimonial-avatar">
+                <p class="testimonial-text">"Ma fille a beaucoup appris grâce à cette plateforme. Les cours sont très informatifs et faciles à comprendre."</p>
+                <p class="testimonial-author">- Thérèse Dupont</p>
+            </div>
+
+            
+            <div class="testimonial-card">
+                <img src="{{ asset('images/parent-2.jpeg') }}" alt="Jean Curie" class="testimonial-avatar">
+                <p class="testimonial-text">"Une excellente ressource pour l'apprentissage en ligne. Je la recommande à tout le monde!"</p>
+                <p class="testimonial-author">- Jean Curie</p>
+            </div>
+
+            
+            <div class="testimonial-card">
+                <img src="{{ asset('images/parent-3.jpeg') }}" alt="Albert Dorne" class="testimonial-avatar">
+                <p class="testimonial-text">"Les ressources disponibles sont très utiles et variées. Une plateforme indispensable pour l'éducation."</p>
+                <p class="testimonial-author">- Albert Dorne</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
