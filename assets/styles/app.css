@@ -29,6 +29,10 @@ body {
     line-height: 1.6;
 }
 
+body.nav-open {
+    overflow: hidden;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -41,6 +45,8 @@ body {
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-bottom: 3px solid #ff6b4a;
+    position: relative;
+    z-index: 10;
 }
 
 .header-content {
@@ -70,6 +76,46 @@ body {
 .main-nav {
     display: flex;
     gap: 50px;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+}
+
+.burger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.burger span + span {
+    margin-top: 5px;
+}
+
+.burger.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .nav-link {
@@ -531,22 +577,58 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .logo img {
+        height: 90px;
+    }
+
+    .burger {
+        display: flex;
+        margin-left: auto;
     }
 
     .main-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(50, 64, 82, 0.97);
         flex-direction: column;
-        gap: 15px;
-        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        opacity: 0;
+        pointer-events: none;
+        border-bottom: none;
+        z-index: 1000;
+    }
+
+    .main-nav.is-open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+    }
+
+    .hero-section {
+        padding: 100px 20px 30px;
+        min-height: 450px;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .testimonials-grid {
